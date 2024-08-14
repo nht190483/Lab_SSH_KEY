@@ -1,3 +1,28 @@
+ssh -i .ssh\devops_rsa devops@127.0.0.120
+PS C:\Users\thanh.nh> ssh keygen
+ssh: Could not resolve hostname keygen: No such host is known.
+PS C:\Users\thanh.nh> ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\thanh.nh/.ssh/id_rsa): C:\Users\thanh.nh\.ssh\devop_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\thanh.nh\.ssh\devop_rsa
+Your public key has been saved in C:\Users\thanh.nh\.ssh\devop_rsa.pub
+The key fingerprint is:
+SHA256:NU4cb14ccGmz6wH2hUMhh9pbKigllaztgMWMKx01K5A sitv\thanh.nh@ITD-GF37433
+The key's randomart image is:
++---[RSA 3072]----+
+|  .. =o. .. oo=o |
+|  E.o +o+. o.==. |
+|   ..=.+  =oooo+ |
+|  . +.+ o+.++.= .|
+|   .   =S....* + |
+|      . o . o +  |
+|       .   . . . |
+|              .  |
+|                 |
++----[SHA256]-----+
+PS C:\Users\thanh.nh>
 
 PS C:\Users\thanh.nh> ssh nht@127.0.0.120
 nht@127.0.0.120's password:

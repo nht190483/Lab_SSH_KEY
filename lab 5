@@ -1,3 +1,4 @@
+# Create SSH Key on windows
 ssh -i .ssh\devops_rsa devops@127.0.0.120
 PS C:\Users\thanh.nh> ssh keygen
 ssh: Could not resolve hostname keygen: No such host is known.
@@ -24,6 +25,8 @@ The key's randomart image is:
 +----[SHA256]-----+
 PS C:\Users\thanh.nh>
 
+# Copy Public key vào Ubuntu Server
+
 PS C:\Users\thanh.nh> ssh nht@127.0.0.120
 nht@127.0.0.120's password:
 Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-40-generic x86_64)
@@ -39,6 +42,40 @@ Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-40-generic x86_64)
   Memory usage: 5%                 IPv4 address for enp0s3: 10.0.2.15
   Swap usage:   0%
 
+Expanded Security Maintenance for Applications is not enabled.
+
+44 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Tue Aug 13 13:41:44 2024 from 10.0.2.2
+nht@nhtserver:~$ nano ~/.ssh/authorized_keys
+nht@nhtserver:~$ nht@nhtserver:~$ cat ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvxiGVD2Zzw8TkKA/jw0KyK1MqqwsfTv+yyyRcvC8laHKiro/mNC9koAszX5gr6DxXj3Bj/8fqh5nggj6+L92+1Dz6SF/4JhkNL9YORPFbBS5yawQeQ84gqJa/2+N8cFRmljh5SWXk4Be+Fsd2V2JNLF9Aa8tLw/+YUa0pJjcSn+aUcrbwv8VLrvQ0yI0l54Rl+ogE2AsnF71+AhXDKAVi8u7FLA15asu1y4l8FA0DInZ4WEfh0EWy0M9KRQMXYo3EnzwOwFdmGyv3tgFa+pyDJLxOmPm/jZVYwD+gNqkdQlQ5lDjM9mpEJZbSwDrTnCH/CUvdJyRHrv8eHcaJbNtQ5XRP25XVAY/NigUptrWFx57S+UPULeZGdWLYrWsjxdR0+AMybKu9uycswyYKkr8eqycvJ8LRnuEO5yvQYcJ2A2Hin5mq3iEf7pVz6bM0x3Ia22oXgfFKfoXlmOKhhXiG9N09joMyeLuXFv9rThAHfNRxRxl9t9DKYczPaLUpaxc= sitv\thanh.nh@ITD-GF37433
+nht@nhtserver:~$
+
+# SSH bằng SSH key
+
+C:\Users\thanh.nh>ssh -i .ssh\devops_rsa nht@127.0.0.120
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-40-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Aug 14 01:08:21 PM UTC 2024
+
+  System load:  0.0                Processes:               119
+  Usage of /:   40.5% of 11.21GB   Users logged in:         1
+  Memory usage: 5%                 IPv4 address for enp0s3: 10.0.2.15
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
 
 Expanded Security Maintenance for Applications is not enabled.
 
@@ -48,9 +85,5 @@ To see these additional updates run: apt list --upgradable
 Enable ESM Apps to receive additional future security updates.
 See https://ubuntu.com/esm or run: sudo pro status
 
-
-Last login: Tue Aug 13 13:41:44 2024 from 10.0.2.2
-nht@nhtserver:~$ nano ~/.ssh/authorized_keys
-nht@nhtserver:~$ nht@nhtserver:~$ cat ~/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvxiGVD2Zzw8TkKA/jw0KyK1MqqwsfTv+yyyRcvC8laHKiro/mNC9koAszX5gr6DxXj3Bj/8fqh5nggj6+L92+1Dz6SF/4JhkNL9YORPFbBS5yawQeQ84gqJa/2+N8cFRmljh5SWXk4Be+Fsd2V2JNLF9Aa8tLw/+YUa0pJjcSn+aUcrbwv8VLrvQ0yI0l54Rl+ogE2AsnF71+AhXDKAVi8u7FLA15asu1y4l8FA0DInZ4WEfh0EWy0M9KRQMXYo3EnzwOwFdmGyv3tgFa+pyDJLxOmPm/jZVYwD+gNqkdQlQ5lDjM9mpEJZbSwDrTnCH/CUvdJyRHrv8eHcaJbNtQ5XRP25XVAY/NigUptrWFx57S+UPULeZGdWLYrWsjxdR0+AMybKu9uycswyYKkr8eqycvJ8LRnuEO5yvQYcJ2A2Hin5mq3iEf7pVz6bM0x3Ia22oXgfFKfoXlmOKhhXiG9N09joMyeLuXFv9rThAHfNRxRxl9t9DKYczPaLUpaxc= sitv\thanh.nh@ITD-GF37433
+Last login: Wed Aug 14 13:04:57 2024 from 10.0.2.2
 nht@nhtserver:~$
